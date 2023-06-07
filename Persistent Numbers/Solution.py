@@ -17,21 +17,23 @@ def do_factor(n):
     return True, res
 
 
-n = int(input())
-output = ""
-
-while n >= 0:
-    factored, factors = do_factor(n)
-    if factored:
-        if len(factors) == 1:
-            output += str(1)
-        factors.sort()
-        for factor in factors:
-            output += str(factor)
-        output += "\n"
-    else:
-        output += "There is no such number.\n"
+def main():
     n = int(input())
+    output = ""
+    while n >= 0:
+        factored, factors = do_factor(n)
+        if factored:
+            if len(factors) == 1:
+                output += str(1)
+            factors.sort()
+            for factor in factors:
+                output += str(factor)
+            output += "\n"
+        else:
+            output += "There is no such number.\n"
+        n = int(input())
+    print(output)
 
-print(output)
 
+if __name__ == "__main__":
+    main()
